@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
         if (HP < 0)
         {
             HP = 0;
+            StartCoroutine(deleteComponent(2));
         }
 
         // If the Ally has one hit point left and has a damagedAlly sprite...
@@ -103,5 +104,11 @@ public class Enemy : MonoBehaviour
         Vector3 enemyScale = transform.localScale;
         enemyScale.x *= -1;
         transform.localScale = enemyScale;
+    }
+
+    IEnumerator deleteComponent(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Destroy(gameObject);
     }
 }

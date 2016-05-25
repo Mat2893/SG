@@ -38,6 +38,7 @@ public class Ally : MonoBehaviour
         if(HP < 0)
         {
             HP = 0;
+            StartCoroutine(deleteComponent(2));
         }
 
         // If the Ally has one hit point left and has a damagedAlly sprite...
@@ -54,17 +55,17 @@ public class Ally : MonoBehaviour
 	void Death()
 	{
 		// Find all of the sprite renderers on this object and it's children.
-		SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
+		//SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
 
 		// Disable all of them sprite renderers.
-		foreach(SpriteRenderer s in otherRenderers)
-		{
-			s.enabled = false;
-		}
+		//foreach(SpriteRenderer s in otherRenderers)
+		//{
+		//	s.enabled = false;  //Not needed for allies -> no death sprite
+		//}
 
 		// Re-enable the main sprite renderer and set it's sprite to the deadAlly sprite.
-		ren.enabled = true;
-		ren.sprite = deadAlly;
+		//ren.enabled = true;
+		//ren.sprite = deadAlly;
 
 		// Set dead to true.
 		dead = true;
@@ -84,4 +85,10 @@ public class Ally : MonoBehaviour
 		/*int i = Random.Range(0, deathClips.Length);
 		AudioSource.PlayClipAtPoint(deathClips[i], transform.position);*/
 	}
+
+    IEnumerator deleteComponent(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Destroy(gameObject);
+    }
 }
