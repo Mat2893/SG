@@ -11,9 +11,13 @@ public class Enemy : MonoBehaviour
 	public GameObject hundredPointsUI;	// A prefab of 100 that appears when the enemy dies.
 	public float deathSpinMin = -100f;			// A value to give the minimum amount of Torque when dying
 	public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
+    public GameObject healthBar;
+
+    private float maxHP;
+    private float lifePercentage;
 
 
-	private SpriteRenderer ren;			// Reference to the sprite renderer.
+    private SpriteRenderer ren;			// Reference to the sprite renderer.
 	private Transform frontCheck;		// Reference to the position of the gameobject used for checking if something is in front.
 	private bool dead = false;			// Whether or not the enemy is dead.
 	private Score score;				// Reference to the Score script.
@@ -21,6 +25,7 @@ public class Enemy : MonoBehaviour
 	
 	void Start()
 	{
+        maxHP = HP;
         Flip();
         // Setting up the references.
         ren = transform.Find("body").GetComponent<SpriteRenderer>();
@@ -36,9 +41,14 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         HP -= damage;
+        lifePercentage = HP / maxHP;
+
+        healthBar.transform.localScale = new Vector3(lifePercentage, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+
         if (HP < 0)
         {
             HP = 0;
+            GameObject.Find("SpawnerAlly").GetComponent<SpawnerAlly>().gainEnergy(20);
             StartCoroutine(deleteComponent(2));
         }
 

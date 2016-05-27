@@ -11,9 +11,12 @@ public class Ally : MonoBehaviour
 	public GameObject hundredPointsUI;	// A prefab of 100 that appears when the Ally dies.
 	public float deathSpinMin = -100f;			// A value to give the minimum amount of Torque when dying
 	public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
+    public GameObject healthBar;
 
+    private float maxHP;
+    private float lifePercentage;
 
-	private SpriteRenderer ren;			// Reference to the sprite renderer.
+    private SpriteRenderer ren;			// Reference to the sprite renderer.
 	private Transform frontCheck;		// Reference to the position of the gameobject used for checking if something is in front.
 	private bool dead = false;			// Whether or not the Ally is dead.
 	private Score score;				// Reference to the Score script.
@@ -21,6 +24,7 @@ public class Ally : MonoBehaviour
 	
 	void Start()
 	{
+        maxHP = HP;
 		// Setting up the references.
 		ren = transform.Find("body").GetComponent<SpriteRenderer>();
 		score = GameObject.Find("Score").GetComponent<Score>();
@@ -35,7 +39,11 @@ public class Ally : MonoBehaviour
 	public void TakeDamage(float damage)
 	{
         HP -= damage;
-        if(HP < 0)
+        lifePercentage = HP / maxHP;
+
+        healthBar.transform.localScale = new Vector3(lifePercentage, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+
+        if (HP < 0)
         {
             HP = 0;
             StartCoroutine(deleteComponent(2));

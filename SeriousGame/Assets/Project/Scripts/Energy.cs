@@ -26,7 +26,7 @@ public class Energy : MonoBehaviour
 	{
         energy = (int) energyScript.GetComponent<SpawnerAlly>().getEnergy();
         // Set the score text.
-        GetComponent<GUIText>().text = "Energy: " + energy;
+        GetComponent<GUIText>().text = "Energie: " + energy;
 	}
 
 }

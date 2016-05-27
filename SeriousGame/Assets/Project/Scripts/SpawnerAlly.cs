@@ -89,8 +89,15 @@ public class SpawnerAlly : MonoBehaviour
         }       
     }
 
-public float getEnergy()
+    public float getEnergy()
     {
         return energy;
     }
+
+    public void gainEnergy(float bonus)
+    {
+        energy += bonus;
+    }
 }
+
+
