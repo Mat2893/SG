@@ -172,7 +172,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.078877, y: 13.861616, z: 0}
+  m_LocalPosition: {x: 2.2903872, y: 12.515638, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 436566}
@@ -286,6 +286,7 @@ MonoBehaviour:
   deathSpinMin: -100
   deathSpinMax: 100
   healthBar: {fileID: 153550}
+  explosion: {fileID: 100000, guid: 5c4757cef0b3109468d3a284c73143e2, type: 2}
 --- !u!114 &11407820
 MonoBehaviour:
   m_ObjectHideFlags: 1

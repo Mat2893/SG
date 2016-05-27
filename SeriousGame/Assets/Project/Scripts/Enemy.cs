@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 	public float deathSpinMin = -100f;			// A value to give the minimum amount of Torque when dying
 	public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
     public GameObject healthBar;
+    public GameObject explosion;
 
     private float maxHP;
     private float lifePercentage;
@@ -41,6 +42,13 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         HP -= damage;
+
+        if((int) HP - (int) (HP + damage) != 0)
+        {
+            Quaternion randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+            Instantiate(explosion, transform.position, randomRotation);
+        }       
+
         lifePercentage = HP / maxHP;
 
         healthBar.transform.localScale = new Vector3(lifePercentage, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
