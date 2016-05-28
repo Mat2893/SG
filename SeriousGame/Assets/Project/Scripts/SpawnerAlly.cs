@@ -30,33 +30,40 @@ public class SpawnerAlly : MonoBehaviour
 
     void Update()
     {
-        energy += 0.2f;
+        energy += 0.2f; 
+    }
 
-        if(Input.anyKeyDown)    //Allows to create 5 different type of units generically
+    public void createUnit(int unitNumber)
+    {
+        if (allies.Length >= (unitNumber + 1) && energy >= alliesPrices[unitNumber])
         {
-            for(int i = 0; i < 5; i++)
+            energy -= alliesPrices[unitNumber];
+            creationList.Add(allies[unitNumber]);
+            if (!creating)
             {
-                if (allies.Length >= (i + 1) && Input.GetKeyDown((UnityEngine.KeyCode) keyPadCode[i]))  //Appui touche Keypad 1
-                {
-                    askingCreation = true;
-                    code = keyPadCode[i] - 257;  //code équivaut à l'index de l'ally à créer
-                }
+                StartCoroutine(createFunction(timeCreatingAllies[unitNumber]));
+            }
+        }
+    }
+
+    public int getNumber(int unit)
+    {
+        int count = 0;
+
+        for(int i = 0; i < creationList.Count; i++)
+        {
+            if(creationList[i].Equals(allies[unit]))
+            {
+                count++;
             }
         }
 
-        if (askingCreation)
-        {
-            askingCreation = false;
-            if (allies.Length >= 1 && energy >= alliesPrices[code]) //Demande la création d'unité de façon générique
-            {
-                energy -= alliesPrices[code];
-                creationList.Add(allies[code]);
-                if (!creating)
-                {
-                    StartCoroutine(createFunction(timeCreatingAllies[code]));
-                }
-            }
-        }            
+        return count;
+    }
+
+    public float getPrice(int unit)
+    {
+        return alliesPrices[unit];
     }
 
     IEnumerator createFunction(float waitTime)
