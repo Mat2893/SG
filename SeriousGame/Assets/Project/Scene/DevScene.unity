@@ -451,6 +451,22 @@ Prefab:
       propertyPath: m_FontData.m_FontStyle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11467338, guid: 3f692f7622fbc2a4eacb966273c7daf5, type: 2}
+      propertyPath: m_Color.r
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467338, guid: 3f692f7622fbc2a4eacb966273c7daf5, type: 2}
+      propertyPath: m_Color.b
+      value: 0.95686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467338, guid: 3f692f7622fbc2a4eacb966273c7daf5, type: 2}
+      propertyPath: m_Color.g
+      value: 0.654902
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434274, guid: 3f692f7622fbc2a4eacb966273c7daf5, type: 2}
+      propertyPath: priceShadow
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f692f7622fbc2a4eacb966273c7daf5, type: 2}
   m_IsPrefabParent: 0
