@@ -358,7 +358,7 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 59a5800f69f764272a193320f2b229b2, type: 3}
+  m_Font: {fileID: 12800000, guid: a079162d1293bbf459a2d5f0c7b5ad71, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 80
   m_FontStyle: 0
@@ -375,13 +375,13 @@ GUIText:
   m_GameObject: {fileID: 102748}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Energy
+  m_Text: Energie
   m_Anchor: 2
   m_Alignment: 0
   m_PixelOffset: {x: -200, y: -800}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 59a5800f69f764272a193320f2b229b2, type: 3}
+  m_Font: {fileID: 12800000, guid: a079162d1293bbf459a2d5f0c7b5ad71, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 40
   m_FontStyle: 0
@@ -398,13 +398,13 @@ GUIText:
   m_GameObject: {fileID: 166488}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Energy
+  m_Text: Energie
   m_Anchor: 2
   m_Alignment: 0
   m_PixelOffset: {x: -200, y: -800}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 59a5800f69f764272a193320f2b229b2, type: 3}
+  m_Font: {fileID: 12800000, guid: a079162d1293bbf459a2d5f0c7b5ad71, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 40
   m_FontStyle: 0
@@ -427,7 +427,7 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 59a5800f69f764272a193320f2b229b2, type: 3}
+  m_Font: {fileID: 12800000, guid: a079162d1293bbf459a2d5f0c7b5ad71, type: 3}
   m_Material: {fileID: 0}
   m_FontSize: 80
   m_FontStyle: 0
