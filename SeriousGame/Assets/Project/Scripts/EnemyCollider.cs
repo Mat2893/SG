@@ -23,5 +23,12 @@ public class EnemyCollider : MonoBehaviour {
                 coll.gameObject.GetComponent<Ally>().TakeDamage(0.1f);
             }
         }
+        if (coll.gameObject.tag == "AllyBase")
+        {
+            if (coll.gameObject.GetComponent<Base>())
+            {
+                coll.gameObject.GetComponent<Base>().TakeDamage(0.1f);
+            }
+        }
     }
 }

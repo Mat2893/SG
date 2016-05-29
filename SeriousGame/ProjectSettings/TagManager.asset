@@ -14,6 +14,8 @@ TagManager:
   - ExplosionFX
   - HealthBar
   - Ally
+  - AllyBase
+  - EnemyBase
   layers:
   - Default
   - TransparentFX
