@@ -33,8 +33,8 @@ public class Ally : MonoBehaviour
 
 	void Update ()
 	{
-		// Set the Ally's velocity to moveSpeed in the x direction.
-		GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);		
+        // Set the Ally's velocity to moveSpeed in the x direction.
+        GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 	}
 	
 	public void TakeDamage(float damage, string category)
