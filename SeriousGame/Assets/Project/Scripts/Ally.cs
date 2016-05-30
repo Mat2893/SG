@@ -12,6 +12,7 @@ public class Ally : MonoBehaviour
 	public float deathSpinMin = -100f;			// A value to give the minimum amount of Torque when dying
 	public float deathSpinMax = 100f;			// A value to give the maximum amount of Torque when dying
     public GameObject healthBar;
+    public string category;             // Unit category, used for the strengths/weaknesses system, small <- medium <- big
 
     private float maxHP;
     private float lifePercentage;
@@ -36,9 +37,45 @@ public class Ally : MonoBehaviour
 		GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);		
 	}
 	
-	public void TakeDamage(float damage)
+	public void TakeDamage(float damage, string category)
 	{
-        HP -= damage;
+        if (!this.category.Equals(category))
+        {
+            if (this.category.Equals("small") && category.Equals("medium"))
+            {
+                HP -= damage * 1.5f;
+            }
+            else
+            {
+                HP -= damage * 0.5f;
+            }
+
+            if (this.category.Equals("medium") && category.Equals("small"))
+            {
+                HP -= damage * 0.5f;
+            }
+            else
+            {
+                HP -= damage * 1.5f;
+            }
+
+            if (this.category.Equals("big") && category.Equals("medium"))
+            {
+                HP -= damage * 0.5f;
+            }
+            else
+            {
+                HP -= damage * 1.5f;
+            }
+        }
+        else
+        {
+            HP -= damage;
+        }
+        
+        
+        
+        
         lifePercentage = HP / maxHP;
 
         healthBar.transform.localScale = new Vector3(lifePercentage, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
