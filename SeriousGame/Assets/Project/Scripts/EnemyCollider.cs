@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCollider : MonoBehaviour {
+public class EnemyCollider : MonoBehaviour
+{
 
     /*private float ratio;
 
@@ -17,13 +18,6 @@ public class EnemyCollider : MonoBehaviour {
             ratio = 5.0f;
         }
     }*/
-    
-    
-    
-    
-    
-    
-    
     
     void OnCollisionEnter2D(Collision2D coll)
     {
