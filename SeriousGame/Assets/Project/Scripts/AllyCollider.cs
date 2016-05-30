@@ -3,10 +3,6 @@ using System.Collections;
 
 public class AllyCollider : MonoBehaviour
 {
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/master
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Enemy")
