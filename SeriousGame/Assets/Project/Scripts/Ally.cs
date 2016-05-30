@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Ally : MonoBehaviour
-{
+{ 
 	public float moveSpeed = 2f;		// The speed the Ally moves at.
 	public float HP = 2;					// How many times the Ally can be hit before it dies.
 	public Sprite deadAlly;			// A sprite of the Ally when it's dead.
