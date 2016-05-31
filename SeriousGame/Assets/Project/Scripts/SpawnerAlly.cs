@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ public class SpawnerAlly : MonoBehaviour
 	public GameObject[] allies;		// Array of allies prefabs.
     public float[] alliesPrices;    //Price to create allies
     public int[] timeCreatingAllies;//Times to create allies
+    public Button power1;
 
     private List<GameObject> creationList;
     private bool creating;
@@ -14,6 +16,7 @@ public class SpawnerAlly : MonoBehaviour
     private int code;
     private float energy;
     private int[] keyPadCode = { 257,258,259,260,261 };
+    private GameObject[] existingAllies;
 
 	void Start ()
 	{
@@ -94,6 +97,45 @@ public class SpawnerAlly : MonoBehaviour
         {
             creating = false;
         }       
+    }
+
+    public void ActivatePower1() {
+        existingAllies = GameObject.FindGameObjectsWithTag("Ally");
+
+        if (existingAllies.Length != 0)
+        {
+            foreach (GameObject ally in existingAllies)
+            {
+                ally.GetComponent<Ally>().moveSpeed = 5.0f; 
+            }
+        }
+
+        StartCoroutine(EndPower1(5));
+        StartCoroutine(CooldownPower1(10));
+    }
+
+    IEnumerator EndPower1(float waitTime)
+    {
+        power1.interactable = false;
+
+        yield return new WaitForSeconds(waitTime);
+
+        existingAllies = GameObject.FindGameObjectsWithTag("Ally");
+
+        if (existingAllies.Length != 0)
+        {
+            foreach (GameObject ally in existingAllies)
+            {
+                ally.GetComponent<Ally>().moveSpeed = 2.0f;
+            }
+        }
+    }
+
+    IEnumerator CooldownPower1(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        power1.interactable = true;
     }
 
     public float getEnergy()
