@@ -106,7 +106,7 @@ public class SpawnerAlly : MonoBehaviour
         {
             foreach (GameObject ally in existingAllies)
             {
-                ally.GetComponent<Ally>().moveSpeed = 5.0f; 
+                ally.GetComponent<Ally>().moveSpeed = 5.0f;
             }
         }
 
