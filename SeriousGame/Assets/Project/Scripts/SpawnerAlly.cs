@@ -9,23 +9,35 @@ public class SpawnerAlly : MonoBehaviour
     public float[] alliesPrices;    //Price to create allies
     public int[] timeCreatingAllies;//Times to create allies
     public Button power1;
+    public Image[] backgroundImages;
 
     private List<GameObject> creationList;
+    private List<Vector3> creationListPosition;
     private bool creating;
     private bool askingCreation;
     private int code;
     private float energy;
     private int[] keyPadCode = { 257,258,259,260,261 };
     private GameObject[] existingAllies;
+    private Color red;
+    private Color green;
 
-	void Start ()
+
+    void Start ()
 	{
         if(allies.Length != alliesPrices.Length && allies.Length != timeCreatingAllies.Length)
         {
             Debug.Log("Allies unit can't be created correctly");
         }
 
+        red = new Color(255 / 255.0f, 13 / 255.0f, 13 / 255.0f);
+        red.a = 0.49f;
+
+        green = new Color(64 / 255.0f, 237 / 255.0f, 64 / 255.0f);
+        green.a = 0.49f;
+
         creationList = new List<GameObject>();
+        creationListPosition = new List<Vector3>();
         askingCreation = false;
         creating = false;
         energy = 500;
@@ -42,6 +54,7 @@ public class SpawnerAlly : MonoBehaviour
         {
             energy -= alliesPrices[unitNumber];
             creationList.Add(allies[unitNumber]);
+            creationListPosition.Add(transform.position);
             if (!creating)
             {
                 StartCoroutine(createFunction(timeCreatingAllies[unitNumber]));
@@ -74,8 +87,9 @@ public class SpawnerAlly : MonoBehaviour
         creating = true;
         yield return new WaitForSeconds(waitTime);
 
-        Instantiate(creationList[0], transform.position, transform.rotation);
+        Instantiate(creationList[0], creationListPosition[0], transform.rotation);
         creationList.Remove(creationList[0]);
+        creationListPosition.Remove(creationListPosition[0]);
 
         // Play the spawning effect from all of the particle systems.
         foreach (ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
@@ -146,6 +160,22 @@ public class SpawnerAlly : MonoBehaviour
     public void gainEnergy(float bonus)
     {
         energy += bonus;
+    }
+
+    public void changePosition(int laneNumber)
+    {
+        string lane = "Lane" + laneNumber;
+        GameObject button = GameObject.Find(lane);
+        if(button)
+        {
+            transform.position = button.transform.position;
+            foreach(var image in backgroundImages)
+            {
+                image.color = red;
+            }
+
+            backgroundImages[laneNumber - 1].color = green;
+        }
     }
 }
 

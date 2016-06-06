@@ -12,6 +12,8 @@ public class ButtonScript : MonoBehaviour {
     private GameObject allySpawner;   
     private float energyPrice;
     private int numberUnit;
+    private Color red;
+    private Color green;
     
 	// Use this for initialization
 	void Start ()
@@ -23,6 +25,12 @@ public class ButtonScript : MonoBehaviour {
         }
         energyPrice = allySpawner.GetComponent<SpawnerAlly>().getPrice(buttonNumber);
         priceText.text = "Energie : " + energyPrice;
+
+        green = new Color(64 / 255.0f, 237 / 255.0f, 64 / 255.0f);
+        green.a = 0.35f;
+
+        red = new Color(255 / 255.0f, 13 / 255.0f, 13 / 255.0f);
+        red.a = 0.35f;
     }
 	
 	// Update is called once per frame
@@ -30,14 +38,10 @@ public class ButtonScript : MonoBehaviour {
     {
 	    if(allySpawner.GetComponent<SpawnerAlly>().getEnergy() > energyPrice)
         {
-            Color green = new Color(64 / 255.0f, 237 / 255.0f, 64 / 255.0f);
-            green.a = 0.35f;
             backgroundImage.color = green;
         }
         else
         {
-            Color red = new Color(255 / 255.0f, 13 / 255.0f, 13 / 255.0f);
-            red.a = 0.35f;
             backgroundImage.color = red;
         }
 
