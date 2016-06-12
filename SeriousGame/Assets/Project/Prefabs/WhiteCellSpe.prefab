@@ -519,7 +519,7 @@ MonoBehaviour:
   deathSpinMin: -100
   deathSpinMax: 100
   healthBar: {fileID: 101186}
-  category: medium
+  category: anticorps
 --- !u!114 &11426170
 MonoBehaviour:
   m_ObjectHideFlags: 1

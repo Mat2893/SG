@@ -44,31 +44,22 @@ public class Enemy : MonoBehaviour
     {
         if (!this.category.Equals(category))
         {
-            if (this.category.Equals("small") && category.Equals("medium"))
+            if (this.category.Equals("bacteria") && category.Equals("whiteCell"))
             {
-                HP -= damage * 1.5f;
+                HP -= damage * 2f;
             }
             else
             {
-                HP -= damage * 0.5f;
+                HP -= damage * 0.2f;
             }
 
-            if (this.category.Equals("medium") && category.Equals("small"))
+            if (this.category.Equals("virus") && category.Equals("anticorps"))
             {
-                HP -= damage * 0.5f;
+                HP -= damage * 2f;
             }
             else
             {
-                HP -= damage * 1.5f;
-            }
-
-            if (this.category.Equals("big") && category.Equals("medium"))
-            {
-                HP -= damage * 0.5f;
-            }
-            else
-            {
-                HP -= damage * 1.5f;
+                HP -= damage * 0.2f;
             }
         }
         else

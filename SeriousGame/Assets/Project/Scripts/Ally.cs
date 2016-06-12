@@ -41,27 +41,18 @@ public class Ally : MonoBehaviour
 	{
         if (!this.category.Equals(category))
         {
-            if (this.category.Equals("small") && category.Equals("medium"))
+            if (this.category.Equals("whiteCell") && category.Equals("bacteria"))
             {
-                HP -= damage * 1.5f;
-            }
-            else
-            {
-                HP -= damage * 0.5f;
-            }
-
-            if (this.category.Equals("medium") && category.Equals("small"))
-            {
-                HP -= damage * 0.5f;
+                HP -= damage * 0.2f;
             }
             else
             {
                 HP -= damage * 1.5f;
             }
 
-            if (this.category.Equals("big") && category.Equals("medium"))
+            if (this.category.Equals("anticorps") && category.Equals("virus"))
             {
-                HP -= damage * 0.5f;
+                HP -= damage * 0.2f;
             }
             else
             {

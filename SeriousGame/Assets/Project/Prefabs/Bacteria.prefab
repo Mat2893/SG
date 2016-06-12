@@ -389,7 +389,7 @@ MonoBehaviour:
   deathSpinMax: 100
   healthBar: {fileID: 137088}
   explosion: {fileID: 100000, guid: 5c4757cef0b3109468d3a284c73143e2, type: 2}
-  category: medium
+  category: bacteria
 --- !u!114 &11487584
 MonoBehaviour:
   m_ObjectHideFlags: 1

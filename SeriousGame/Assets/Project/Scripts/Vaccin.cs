@@ -8,7 +8,7 @@ public class Vaccin : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(VaccinWait(10));
+        StartCoroutine(VaccinWait(30));
     }
 	
 	// Update is called once per frame
