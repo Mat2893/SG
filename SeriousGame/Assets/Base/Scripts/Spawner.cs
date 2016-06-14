@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SpawnerSave : MonoBehaviour
 {
@@ -10,21 +12,29 @@ public class SpawnerSave : MonoBehaviour
 
 	void Start ()
 	{
-		// Start calling the Spawn function repeatedly after a delay .
-		InvokeRepeating("Spawn", spawnDelay, spawnTime);
-	}
+        // Start calling the Spawn function repeatedly after a delay .
+        StartCoroutine(delay(spawnDelay));
+	}       
 
+    IEnumerator delay(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        StartCoroutine(spawn(spawnTime));
+    }
 
-	void Spawn ()
-	{
-		// Instantiate a random enemy.
-		int enemyIndex = Random.Range(0, enemies.Length);
-		Instantiate(enemies[enemyIndex], transform.position, transform.rotation);
+    IEnumerator spawn(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
 
-		// Play the spawning effect from all of the particle systems.
-		foreach(ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
-		{
-			p.Play();
-		}
-	}
+        int enemyIndex = Random.Range(0, enemies.Length);
+        Instantiate(enemies[enemyIndex], transform.position, transform.rotation);
+
+        // Play the spawning effect from all of the particle systems.
+        foreach (ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
+        {
+            p.Play();
+        }
+        Debug.Log(spawnTime);
+        StartCoroutine(spawn(spawnTime));
+    }   
 }

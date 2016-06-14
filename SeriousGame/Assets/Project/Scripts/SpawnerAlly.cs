@@ -19,6 +19,7 @@ public class SpawnerAlly : MonoBehaviour
     private float energy;
     private int[] keyPadCode = { 257,258,259,260,261 };
     private GameObject[] existingAllies;
+    private GameObject[] spawnerEnemies;
     private Color red;
     private Color green;
 
@@ -146,6 +147,46 @@ public class SpawnerAlly : MonoBehaviour
     }
 
     IEnumerator CooldownPower1(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        power1.interactable = true;
+    }
+
+    public void ActivatePower2()
+    {
+        spawnerEnemies = GameObject.FindGameObjectsWithTag("Spawner");
+
+        if (spawnerEnemies.Length != 0)
+        {
+            foreach (GameObject spawner in spawnerEnemies)
+            {
+                spawner.GetComponent<Spawner>().spawnTime = 10f;
+            }
+        }
+
+        StartCoroutine(EndPower2(5));
+        StartCoroutine(CooldownPower2(7));
+    }
+
+    IEnumerator EndPower2(float waitTime)
+    {
+        power1.interactable = false;
+
+        yield return new WaitForSeconds(waitTime);
+
+        spawnerEnemies = GameObject.FindGameObjectsWithTag("Spawner");
+
+        if (spawnerEnemies.Length != 0)
+        {
+            foreach (GameObject spawner in spawnerEnemies)
+            {
+                spawner.GetComponent<Spawner>().spawnTime = 2f;
+            }
+        }
+    }
+
+    IEnumerator CooldownPower2(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
 

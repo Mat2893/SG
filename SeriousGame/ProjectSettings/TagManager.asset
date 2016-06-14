@@ -16,6 +16,8 @@ TagManager:
   - Ally
   - AllyBase
   - EnemyBase
+  - Power1
+  - Spawner
   layers:
   - Default
   - TransparentFX
