@@ -25,34 +25,34 @@
 	},
 	{
 		"ID": "grippe1_Defaite",
-		"content": ""
+		"content": "Hélas, le virus a eu le dessus. Tes défenses sont désormais très affaiblies et il leur faudra du temps pour reprendre des forces et éliminer la maladie."
 	},
 	{
 		"ID": "grippe1_Victoire",
-		"content": ""
+		"content": "Bravo, tu as réussi ! Grâce à la bonne gestion de tes anticorps, tu as été en mesure d’éliminer le virus : la maladie est éliminée."
 	},
 	{
 		"ID": "grippe2_Intro",
-		"content": ""
+		"content": "Dans ce niveau, le virus de la grippe est de nouveau entré dans ton corps. Cette fois, cependant, tu as été vacciné et donc, tu possèdes déjà les anticorps nécessaires pour combattre la maladie. Elimine donc cette grippe !"
 	},
 	{
 		"ID": "grippe2_Defaite",
-		"content": ""
+		"content": "Hélas, tu n’as pas su gérer convenablement tes anticorps et le virus a pu progresser comme il le voulait."
 	},
 	{
 		"ID": "grippe2_Victoire",
-		"content": ""
+		"content": "Bravo, une nouvelle fois, tu as su faire face à la maladie. Tu dois maintenant comprendre l’importance des vaccins. C’est parce que les gens se font vacciner que certaines maladies ne peuvent plus se propager. Par contre, il faut renouveler ces vaccins car, avec le temps, ils perdent en efficacité et si les anticorps disparaissent, ces maladies pourraient revenir."
 	},
 	{
 		"ID": "allergies_Intro",
-		"content": ""
+		"content": "Lorsque tu souffres d’une allergie, cela signifie que ton corps réagit de façon violente à quelque chose qui n’est pas dangereux, comme le pollen des plantes par exemple. Il est très difficile d’empêcher le corps de réagir lorsqu’on souffre d’allergies mais il existe des moyens de réduire la violence de la réaction. L’un de ces moyens et la consommation de médicaments antihistaminiques. Ces médicaments ont pour effet de réduire les effets d’une substance appelée histamine, qui est libérée en très grande quantité dans le sang lorsque le corps repère un danger. L’histamine ne pouvant plus agir correctement, les réactions allergiques sont alors grandement atténuées voire supprimées, cela dépend de la personne. Le problème c’est que l’effet de ces médicaments ne dure pas très longtemps et qu’il faut en prendre très régulièrement. Dans ce niveau, l’histamine va apparaître très rapidement et si tu ne prends pas tes médicaments régulièrement, tu ne pourras pas réduire leur vitesse d’apparition."
 	},
 	{
 		"ID": "allergies_Defaite",
-		"content": ""
+		"content": "Hélas, tu n’as pas correctement pris ton traitement. L’histamine n’a pas été stoppée et ton corps a désormais une réaction violente comme de nombreux éternuements ou des démangeaisons."
 	},
 	{
 		"ID": "allergies_Victoire",
-		"content": ""
+		"content": "Bravo, en prenant correctement ton traitement tu as suffisamment réduit les effets de l’histamine pour ne pas être dérangé par ton allergie, continue comme ça !"
 	}
 ]
