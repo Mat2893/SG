@@ -1,10 +1,58 @@
 [
     {
-        "ID": "test",
-        "content": "Cuius acerbitati uxor grave accesserat incentivum, germanitate Augusti turgida supra modum, quam Hannibaliano regi fratris filio antehac Constantinus iunxerat pater, Megaera quaedam mortalis, inflammatrix saevientis adsidua, humani cruoris avida nihil mitius quam maritus; qui paulatim eruditiores facti processu temporis ad nocendum per clandestinos versutosque rumigerulos conpertis leviter addere quaedam male suetos falsa et placentia sibi discentes, adfectati regni vel artium nefandarum calumnias insontibus adfligebant."
+        "ID": "rhume_Intro",
+        "content": "Pour guérir une maladie, il faut le plus souvent suivre un traitement médical. Ces médicaments peuvent avoir des effets variés mais servent toujours à renforcer tes défenses immunitaires. Pourtant s'il est très important de prendre ses médicaments, il ne faut pas non plus en abuser. En effet, au lieu de te soigner, prendre trop de médicaments peut te rendre encore plus malade. C'est pour cela que quand un docteur te dit quels sont les médicaments que tu dois prendre, il te dit aussi quand les prendre et combien. A présent, c'est à toi de jouer. Elimine donc ce rhume qui t'empêche de respirer convenablement mais fait bien attention : si le bouton de médicament est orange, c'est qu'il est trop tôt pour en prendre."
     },
+	{
+		"ID": "rhume_Defaite1",
+		"content": "Hélas tu as consommé trop des médicaments. Cela a eu des effets secondaires, comme la fatigue, qui ont perturbé ton corps et tes défenses, ce qui a eu pour effet de laisser la maladie se répandre facilement."
+	},
+	{
+		"ID": "rhume_Defaite2",
+		"content": "Hélas, tu n’as pas suffisamment pris tes médicaments. Tes défenses étaient trop faibles pour pouvoir repousser la maladie."
+	},
     {
-        "ID": "test2",
-        "content": "Sin autem ad adulescentiam perduxissent, dirimi tamen interdum contentione vel uxoriae condicionis vel commodi alicuius, quod idem adipisci uterque non posset. Quod si qui longius in amicitia provecti essent, tamen saepe labefactari, si in honoris contentionem incidissent; pestem enim nullam maiorem esse amicitiis quam in plerisque pecuniae cupiditatem, in optimis quibusque honoris certamen et gloriae; ex quo inimicitias maximas saepe inter amicissimos exstitisse."
-    }
+        "ID": "rhume_Victoire",
+        "content": "Bravo, tu as éliminé la maladie. Tu as su respecter les doses prescrites par le docteur, ce qui a aidé tes défenses à repousser ce rhume et tu peux de nouveau respirer normalement."
+	},
+	{
+		"ID": "grippe1_Intro",
+		"content": "Lorsqu’un docteur découvre que tu as la grippe, cela signifie qu’un virus est entré dans ton corps. Contrairement aux bactéries, peu de médicaments peuvent renforcer t’aider à combattre un virus. La meilleure solution consiste à se faire vacciner avant de tomber malade. Un vaccin c’est un liquide qui contient une toute petite quantité d’une maladie. C’est trop peu pour que tu tombes malade, mais c’est suffisant pour que ton corps fabrique ce qu’on appelle des anticorps. Un anticorps, c’est ce qu’il y a de plus efficace pour éliminer un virus. Malheureusement, tu n’es actuellement pas vacciné contre la grippe et tu n’as pas encore les anticorps qu’il faut. Tu dois donc attendre que ton corps apprenne à créer les bons anticorps avant de pouvoir éliminer la maladie."
+	},
+	{
+		"ID": "grippe1_ArriveeAnticorps",
+		"content": "Ton corps sait maintenant comment créer les anticorps contre la grippe. Tu as maintenant tout ce qu’il te faut pour l’éliminer !"
+	},
+	{
+		"ID": "grippe1_Defaite",
+		"content": ""
+	},
+	{
+		"ID": "grippe1_Victoire",
+		"content": ""
+	},
+	{
+		"ID": "grippe2_Intro",
+		"content": ""
+	},
+	{
+		"ID": "grippe2_Defaite",
+		"content": ""
+	},
+	{
+		"ID": "grippe2_Victoire",
+		"content": ""
+	},
+	{
+		"ID": "allergies_Intro",
+		"content": ""
+	},
+	{
+		"ID": "allergies_Defaite",
+		"content": ""
+	},
+	{
+		"ID": "allergies_Victoire",
+		"content": ""
+	}
 ]
