@@ -424,6 +424,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 538349559}
+    - target: {fileID: 11466446, guid: 3ae13995fa6067a458176e86f46ca6ae, type: 2}
+      propertyPath: m_Text
+      value: "M\xE9dicament"
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422762, guid: 3ae13995fa6067a458176e86f46ca6ae, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivatePower2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ae13995fa6067a458176e86f46ca6ae, type: 2}
   m_IsPrefabParent: 0
@@ -571,11 +579,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11495750, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
       propertyPath: spawnTime
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11495750, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
       propertyPath: spawnDelay
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495750, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 109424, guid: baa4ce40baed2d54c98c8c12500a686a, type: 2}
+    - target: {fileID: 125416, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
@@ -633,6 +649,22 @@ Prefab:
     - target: {fileID: 125416, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
       propertyPath: m_Name
       value: SpawnerEnnemi (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495750, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 109424, guid: baa4ce40baed2d54c98c8c12500a686a, type: 2}
+    - target: {fileID: 11495750, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
+      propertyPath: spawnTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495750, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
+      propertyPath: spawnDelay
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 125416, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f00812142ca4d7a42bcad73716a820aa, type: 2}

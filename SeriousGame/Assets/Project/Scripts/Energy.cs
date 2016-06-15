@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Energy : MonoBehaviour
@@ -26,7 +27,7 @@ public class Energy : MonoBehaviour
 	{
         energy = (int) energyScript.GetComponent<SpawnerAlly>().getEnergy();
         // Set the score text.
-        GetComponent<GUIText>().text = "Energie: " + energy;
+        GetComponent<Text>().text = "Energie: " + energy;
 	}
 
 }

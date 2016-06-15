@@ -27,7 +27,7 @@ public class Ally : MonoBehaviour
 	{
         maxHP = HP;
 		// Setting up the references.
-		ren = transform.Find("body").GetComponent<SpriteRenderer>();
+		//ren = transform.Find("body").GetComponent<SpriteRenderer>();
 		score = GameObject.Find("Score").GetComponent<Score>();
 	}
 
@@ -93,16 +93,6 @@ public class Ally : MonoBehaviour
 		// Find all of the sprite renderers on this object and it's children.
 		//SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
 
-		// Disable all of them sprite renderers.
-		//foreach(SpriteRenderer s in otherRenderers)
-		//{
-		//	s.enabled = false;  //Not needed for allies -> no death sprite
-		//}
-
-		// Re-enable the main sprite renderer and set it's sprite to the deadAlly sprite.
-		//ren.enabled = true;
-		//ren.sprite = deadAlly;
-
 		// Set dead to true.
 		dead = true;
 
@@ -110,17 +100,23 @@ public class Ally : MonoBehaviour
 		GetComponent<Rigidbody2D>().fixedAngle = false;
 		GetComponent<Rigidbody2D>().AddTorque(Random.Range(deathSpinMin,deathSpinMax));
 
-		// Find all of the colliders on the gameobject and set them all to be triggers.
-		Collider2D[] cols = GetComponents<Collider2D>();
-		foreach(Collider2D c in cols)
+        // Find all of the colliders on the gameobject and set them all to be triggers.
+        CircleCollider2D[] cols = GetComponents<CircleCollider2D>();
+		foreach(CircleCollider2D c in cols)
 		{
 			c.isTrigger = true;
 		}
 
-		// Play a random audioclip from the deathClips array.
-		/*int i = Random.Range(0, deathClips.Length);
+        BoxCollider2D[] cols2 = GetComponents<BoxCollider2D>();
+        foreach (BoxCollider2D c in cols2)
+        {
+            c.isTrigger = true;
+        }
+
+        // Play a random audioclip from the deathClips array.
+        /*int i = Random.Range(0, deathClips.Length);
 		AudioSource.PlayClipAtPoint(deathClips[i], transform.position);*/
-	}
+    }
 
     IEnumerator deleteComponent(float waitTime)
     {

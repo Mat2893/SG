@@ -32,7 +32,6 @@ public class Spawner : MonoBehaviour
         {
             p.Play();
         }
-        Debug.Log(spawnTime);
         StartCoroutine(spawn(spawnTime));
     }
 }

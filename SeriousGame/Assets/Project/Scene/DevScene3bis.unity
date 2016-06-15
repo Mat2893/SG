@@ -526,7 +526,7 @@ RectTransform:
   - {fileID: 218815922}
   - {fileID: 954829518}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -543,10 +543,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1698455795}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!1 &493271558 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 152672, guid: 3f692f7622fbc2a4eacb966273c7daf5, type: 2}
-  m_PrefabInternal: {fileID: 1768602301}
 --- !u!224 &493271559 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22402502, guid: 3f692f7622fbc2a4eacb966273c7daf5,
@@ -818,51 +814,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22467500, guid: a59c357613a7c084aabfc076be230f8e,
     type: 2}
   m_PrefabInternal: {fileID: 694737683}
---- !u!1 &695910535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 695910537}
-  - 114: {fileID: 695910536}
-  m_Layer: 5
-  m_Name: Vaccin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &695910536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 695910535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a3cd6b6427675047a231a06b9a3dd3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  specialUnit: {fileID: 493271558}
---- !u!224 &695910537
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 695910535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.043692324, y: 0.04854703, z: 0.04854703}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.37524685, y: -373.23508}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &954829517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,7 +1779,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 152672, guid: 3f692f7622fbc2a4eacb966273c7daf5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11468130, guid: 3f692f7622fbc2a4eacb966273c7daf5, type: 2}
       propertyPath: m_Enabled

@@ -118,7 +118,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a079162d1293bbf459a2d5f0c7b5ad71, type: 3}
-    m_FontSize: 16
+    m_FontSize: 23
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300004, guid: 39791eb0579ddcb4b98a9b296f6550c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de233b2139c48084288330c440cb243a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.8602941, b: 0.8223399, a: 1}
+  m_Color: {r: 0.27058825, g: 0.654902, b: 0.95686275, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -193,8 +193,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: a079162d1293bbf459a2d5f0c7b5ad71, type: 3}
-    m_FontSize: 15
-    m_FontStyle: 1
+    m_FontSize: 18
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
@@ -289,17 +289,17 @@ RectTransform:
   m_GameObject: {fileID: 152672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 1, z: 1}
   m_Children:
   - {fileID: 22403770}
   - {fileID: 22406774}
   - {fileID: 22426036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.28300002, y: 0.020000001}
-  m_AnchorMax: {x: 0.42912713, y: 0.15640044}
-  m_AnchoredPosition: {x: 1.5, y: 1}
-  m_SizeDelta: {x: -27, y: -24}
+  m_AnchorMin: {x: 0.29747444, y: 0.028600661}
+  m_AnchorMax: {x: 0.4192502, y: 0.14910011}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: -6, y: -9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22403770
 RectTransform:
@@ -316,7 +316,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.29000002}
   m_AnchoredPosition: {x: 0, y: 4.5}
-  m_SizeDelta: {x: 0, y: -9}
+  m_SizeDelta: {x: 0, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22406774
 RectTransform:
@@ -332,8 +332,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0.29000002}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.099998474}
-  m_SizeDelta: {x: -55, y: -11}
+  m_AnchoredPosition: {x: 0, y: -0.74000025}
+  m_SizeDelta: {x: -55, y: 0.12000039}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22426036
 RectTransform:
@@ -349,8 +349,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0.57000005}
   m_AnchorMax: {x: 1, y: 0.76000005}
-  m_AnchoredPosition: {x: -0.000024318695, y: -0.40000153}
-  m_SizeDelta: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -0.000024318695, y: 0}
+  m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
 Prefab:

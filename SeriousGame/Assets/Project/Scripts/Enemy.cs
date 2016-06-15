@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         maxHP = HP;
         Flip();
         // Setting up the references.
-        ren = transform.Find("body").GetComponent<SpriteRenderer>();
+        //ren = transform.Find("body").GetComponent<SpriteRenderer>();
 		score = GameObject.Find("Score").GetComponent<Score>();
 	}
 
@@ -77,11 +77,9 @@ public class Enemy : MonoBehaviour
 
         healthBar.transform.localScale = new Vector3(lifePercentage, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
 
-        if (HP < 0)
+        if(HP < 0)
         {
             HP = 0;
-            GameObject.Find("SpawnerAlly").GetComponent<SpawnerAlly>().gainEnergy(20);
-            StartCoroutine(deleteComponent(2));
         }
 
         // If the Ally has one hit point left and has a damagedAlly sprite...
@@ -91,48 +89,50 @@ public class Enemy : MonoBehaviour
 
         // If the Ally has zero or fewer hit points and isn't dead yet...
         if (HP <= 0 && !dead)
-            // ... call the death function.
+        {
+            // ... call the death function.    
+            dead = true;
             Death();
+            StartCoroutine(deleteComponent(2));
+        }
     }
 
     void Death()
 	{
 		// Find all of the sprite renderers on this object and it's children.
 		SpriteRenderer[] otherRenderers = GetComponentsInChildren<SpriteRenderer>();
+        GameObject.Find("SpawnerAlly").GetComponent<SpawnerAlly>().gainEnergy(20);        
 
-		// Disable all of them sprite renderers.
-		foreach(SpriteRenderer s in otherRenderers)
-		{
-			s.enabled = false;
-		}
-
-		// Re-enable the main sprite renderer and set it's sprite to the deadEnemy sprite.
-		ren.enabled = true;
-		ren.sprite = deadEnemy;
-
-		// Increase the score by 100 points
-		score.score += 100;
-
-		// Set dead to true.
-		dead = true;
+        // Increase the score by 100 points
+        if (score)
+        {
+            score.score += 100;
+        }
+		
 
 		// Allow the enemy to rotate and spin it by adding a torque.
 		GetComponent<Rigidbody2D>().fixedAngle = false;
 		GetComponent<Rigidbody2D>().AddTorque(Random.Range(deathSpinMin,deathSpinMax));
 
-		// Find all of the colliders on the gameobject and set them all to be triggers.
-		Collider2D[] cols = GetComponents<Collider2D>();
-		foreach(Collider2D c in cols)
+        // Find all of the colliders on the gameobject and set them all to be triggers.
+        CircleCollider2D[] cols = GetComponents<CircleCollider2D>();
+		foreach(CircleCollider2D c in cols)
 		{
 			c.isTrigger = true;
 		}
 
-		// Play a random audioclip from the deathClips array.
-		/*int i = Random.Range(0, deathClips.Length);
+        BoxCollider2D[] cols2 = GetComponents<BoxCollider2D>();
+        foreach (BoxCollider2D c in cols2)
+        {
+            c.isTrigger = true;
+        }
+
+        // Play a random audioclip from the deathClips array.
+        /*int i = Random.Range(0, deathClips.Length);
 		AudioSource.PlayClipAtPoint(deathClips[i], transform.position);*/
 
-		// Create a vector that is just above the enemy.
-		Vector3 scorePos;
+        // Create a vector that is just above the enemy.
+        Vector3 scorePos;
 		scorePos = transform.position;
 		scorePos.y += 1.5f;
 

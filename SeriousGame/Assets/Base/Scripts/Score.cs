@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ScoreSave : MonoBehaviour
@@ -20,7 +21,7 @@ public class ScoreSave : MonoBehaviour
 	void Update ()
 	{
 		// Set the score text.
-		GetComponent<GUIText>().text = "Score: " + score;
+		GetComponent<Text>().text = "Score: " + score;
 
 		// If the score has changed...
 		if(previousScore != score)
