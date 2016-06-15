@@ -213,7 +213,7 @@ public class MenusScript : MonoBehaviour {
             gamePaused = true;
         }
 
-        testText.text = PlayerPrefs.GetString("LastInfo", "erreur");
+        testText.text = PlayerPrefs.GetString("test", "erreur");
 
         infosMenuPanel.SetActive(true);
     }
