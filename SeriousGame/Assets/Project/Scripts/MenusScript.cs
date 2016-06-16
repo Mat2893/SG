@@ -123,7 +123,7 @@ public class MenusScript : MonoBehaviour {
     public void Quit()
     {
         Application.Quit();
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 
     public void ToggleSound()
@@ -213,7 +213,7 @@ public class MenusScript : MonoBehaviour {
             gamePaused = true;
         }
 
-        testText.text = PlayerPrefs.GetString("test", "erreur");
+        testText.text = PlayerPrefs.GetString("LastInfo", "erreur");
 
         infosMenuPanel.SetActive(true);
     }
@@ -224,12 +224,15 @@ public class MenusScript : MonoBehaviour {
         {
             pauseButton.interactable = true;
             Pause();
-            /*pauseButton.image.sprite = pauseButtonON;
-            Time.timeScale = 1.0f;
-            gamePaused = false;*/
         }
 
         infosMenuPanel.SetActive(false);
+
+        // Si fin de niveau (victoire ou défaite), on retourne à l'écran de sélection des niveaux
+        if (PlayerPrefs.GetInt("GameOver", 0) == 1)
+        {
+            GameToLevelSelection();
+        }
     }
 
     public void LoadInfo(string infoID)

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Base : MonoBehaviour
@@ -7,12 +8,24 @@ public class Base : MonoBehaviour
     public GameObject healthBar;
 
     private float maxHP;
+    private string sceneName;
     private float lifePercentage;
     private bool dead = false;
+    private Score score;
+    private MenusScript menuController;
 
     void Start()
 	{
+        PlayerPrefs.SetInt("GameOver", 0); // 0 = false, 1 = true, used to know if the game must go back to level selection or not
         maxHP = HP;
+        sceneName = SceneManager.GetActiveScene().name;
+        menuController = GameObject.Find("MenuController").GetComponent<MenusScript>();
+        score = GameObject.Find("Score").GetComponent<Score>();
+
+        if (gameObject.tag.Equals("AllyBase"))
+        {
+            menuController.LoadInfo(sceneName + "_Intro");
+        }
 	}
 
 	void Update ()
@@ -43,5 +56,27 @@ public class Base : MonoBehaviour
 		// Set dead to true.
 		dead = true;
         Time.timeScale = 0;
+
+        if (gameObject.tag.Equals("EnnemyBase"))
+        {
+            int scoreToSave = score.score;
+
+            PlayerPrefs.SetInt(sceneName, scoreToSave);
+
+            if (menuController)
+            {
+                menuController.LoadInfo(sceneName + "_Victoire");
+            }
+        }
+
+        if (gameObject.tag.Equals("AllyBase"))
+        {
+            if (menuController)
+            {
+                menuController.LoadInfo(sceneName + "_Defaite");
+            }
+        }
+
+        PlayerPrefs.SetInt("GameOver", 1);
 	}
 }
