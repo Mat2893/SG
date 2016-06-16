@@ -29,8 +29,7 @@ public class MenusScript : MonoBehaviour {
     private string choosenDifficulty;
     private Color disabledColor;
     private Color enabledColor;
-    private bool gamePaused;
-    private bool infosDisplayed;
+    private bool gamePaused = false;
     private string initialMode;
 
 	// Use this for initialization
@@ -68,8 +67,7 @@ public class MenusScript : MonoBehaviour {
 
         disabledColor = Color.grey;
         enabledColor = Color.white;
-        gamePaused = false;
-        infosDisplayed = false;
+        //gamePaused = false;
 	}
 
     public void ChooseDifficulty()
